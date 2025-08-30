@@ -45,17 +45,25 @@ const ContactPage = () => {
       });
 
       if (!res.ok) {
-        const errText = await res.text();
-        console.error("❌ Backend error:", errText);
-        return;
+        throw new Error(`Server returned ${res.status}`);
       }
 
       const data = await res.json();
       console.log("✅ Score submitted:", data);
 
-      if (data.leaderboard) setLeaderboard(data.leaderboard);
+      if (data.leaderboard) {
+        setLeaderboard(data.leaderboard);
+      }
     } catch (err) {
-      console.error("❌ Network error submitting score:", err);
+      console.error("❌ Error submitting score:", err);
+
+      // Fallback: Update UI locally if backend fails
+      const updatedLeaderboard = [...leaderboard, newEntry]
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10); // Keep only top 10
+
+      setLeaderboard(updatedLeaderboard);
+      alert("Score saved locally (backend not available)");
     }
 
     setShowScore(false);
