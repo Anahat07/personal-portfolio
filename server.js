@@ -6,6 +6,12 @@ const cors = require("cors");
 const app = express();
 const PORT = 4000;
 
+// Enhanced logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
 // Enable CORS
 app.use(cors({
   origin: "http://localhost:3000",
@@ -22,10 +28,13 @@ function loadScores() {
         if (!fs.existsSync(filePath)) {
             // Create empty file if it doesn't exist
             fs.writeFileSync(filePath, JSON.stringify([]));
+            console.log("Created new leaderboard.json file");
             return [];
         }
         const data = fs.readFileSync(filePath, "utf8");
-        return JSON.parse(data);
+        const scores = JSON.parse(data);
+        console.log(`Loaded ${scores.length} scores from leaderboard`);
+        return scores;
     } catch (error) {
         console.error("Error loading scores:", error);
         return [];
@@ -36,7 +45,7 @@ function loadScores() {
 function saveScores(scores) {
     try {
         fs.writeFileSync(filePath, JSON.stringify(scores, null, 2));
-        console.log("Scores saved successfully");
+        console.log(`Saved ${scores.length} scores to leaderboard`);
     } catch (error) {
         console.error("Error saving scores:", error);
     }
@@ -45,6 +54,7 @@ function saveScores(scores) {
 // GET leaderboard
 app.get("/api/leaderboard", (req, res) => {
     try {
+        console.log("Leaderboard request received");
         const scores = loadScores();
         console.log("Sending leaderboard:", scores);
         res.json(scores);
@@ -57,11 +67,11 @@ app.get("/api/leaderboard", (req, res) => {
 // POST new score
 app.post("/api/submitScore", (req, res) => {
     try {
-        console.log("Incoming score submission:", req.body);
+        console.log("Score submission received:", req.body);
 
         const { name, score, message } = req.body;
         if (!name || typeof score !== "number") {
-            console.log("❌ Invalid data:", req.body);
+            console.log("❌ Invalid data received:", req.body);
             return res.status(400).json({ error: "Invalid data" });
         }
 
@@ -89,6 +99,7 @@ app.post("/api/submitScore", (req, res) => {
 
 // Test endpoint to check if server is working
 app.get("/api/test", (req, res) => {
+    console.log("Test endpoint hit");
     res.json({ message: "Server is working!", timestamp: new Date().toISOString() });
 });
 
