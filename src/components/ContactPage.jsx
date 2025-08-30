@@ -354,8 +354,8 @@ const ContactPage = () => {
         </div>
 
         {/* Footer */}
-        <footer className="w-full py-4 text-center text-sm text-white dark:text-black mt-8">
-          © 2025 - made with <span className="text-[#8F9A81]">❤️</span> by Anahat
+        <footer className="w-full py-4 text-center text-sm text-[#383E30] dark:text-[#EEE2DC] mt-8">
+          © 2025 - made with <span className="text-[#383E30]">❤️</span> by Anahat
         </footer>
 
         {/* Leaderboard
