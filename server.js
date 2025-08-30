@@ -4,20 +4,31 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = 4000;
 
-// Enhanced logging middleware
-app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
-  next();
-});
+// Use environment variable for port or default to 4000
+const PORT = process.env.PORT || 4000;
 
-// Enable CORS
+// Enable CORS for all origins in production, localhost in development
+const allowedOrigins = process.env.NODE_ENV === 'production' 
+  ? ["https://anahat-chhatwal.vercel.app"]
+  : ["http://localhost:3000"];
+
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true
 }));
+
 app.use(express.json());
+
 
 // Path to the leaderboard file
 const filePath = path.join(__dirname, "leaderboard.json");

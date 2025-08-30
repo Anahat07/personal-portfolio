@@ -15,6 +15,7 @@ const ContactPage = () => {
   const [netSwaying, setNetSwaying] = useState(0);
   const [playerMessage, setPlayerMessage] = useState('');
   const [leaderboard, setLeaderboard] = useState([]);
+  const API_URL = process.env.REACT_APP_API_URL || "";
 
   //   const deleteEntry = (index) => {
   //   setLeaderboard(prev => prev.filter((_, i) => i !== index));
@@ -25,7 +26,7 @@ const ContactPage = () => {
 
   // Persist leaderboard on change
   useEffect(() => {
-    fetch("/api/leaderboard")  // Remove "http://localhost:4000"
+    fetch(`${API_URL}/api/leaderboard`)
       .then(res => res.json())
       .then(data => setLeaderboard(data));
   }, []);
@@ -41,7 +42,7 @@ const ContactPage = () => {
       console.log("Submitting score to /api/submitScore");
 
       // Use the proxy path (without localhost:4000)
-      const res = await fetch("/api/submitScore", {
+      const res = await fetch(`${API_URL}/api/submitScore`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEntry)
