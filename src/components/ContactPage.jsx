@@ -24,37 +24,39 @@ const ContactPage = () => {
   const animationRef = useRef(null);
 
   // Persist leaderboard on change
-useEffect(() => {
-  fetch("http://localhost:4000/api/leaderboard")
-    .then(res => res.json())
-    .then(data => setLeaderboard(data));
-}, []);
+  useEffect(() => {
+    fetch("http://localhost:4000/api/leaderboard")
+      .then(res => res.json())
+      .then(data => setLeaderboard(data));
+  }, []);
 
-const submitScore = async () => {
-  if (!playerName.trim()) return;
+  const submitScore = async () => {
+    if (!playerName.trim()) return;
 
-  const message = playerMessage.trim() || "> echo 'No message entered.'";
-  const newEntry = { name: playerName, score, message };
+    const finalScore = score; // store current score
+    const message = playerMessage.trim() || "> echo 'No message entered.'";
+    const newEntry = { name: playerName, score: finalScore, message };
 
-  try {
-    const res = await fetch("http://localhost:4000/api/submitScore", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newEntry)
-    });
+    try {
+      const res = await fetch("http://localhost:4000/api/submitScore", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newEntry)
+      });
 
-    const data = await res.json();
-    if (data.leaderboard) setLeaderboard(data.leaderboard);
-  } catch (err) {
-    console.error("Error submitting score:", err);
-  }
+      const data = await res.json();
+      if (data.leaderboard) setLeaderboard(data.leaderboard);
+    } catch (err) {
+      console.error("Error submitting score:", err);
+    }
 
-  setShowScore(false);
-  setPlayerName('');
-  setPlayerMessage('');
-  setScore(0);
-  setAttempts(0);
-};
+    // reset AFTER submission
+    setShowScore(false);
+    setPlayerName('');
+    setPlayerMessage('');
+    setScore(0);
+    setAttempts(0);
+  };
 
   const resetBall = useCallback(() => {
     setBallPosition({ x: 20, y: 85 });
@@ -317,8 +319,8 @@ const submitScore = async () => {
                     onClick={() => setShowScore(true)}
                     disabled={score === 0}
                     className={`flex-1 py-2 px-4 rounded text-sm transition-colors duration-500 ${score > 0
-                        ? 'bg-green-400 hover:bg-green-300 dark:bg-green-500 dark:hover:bg-green-400 text-black'
-                        : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                      ? 'bg-green-400 hover:bg-green-300 dark:bg-green-500 dark:hover:bg-green-400 text-black'
+                      : 'bg-gray-500 text-gray-300 cursor-not-allowed'
                       }`}
                   >
                     SUBMIT SCORE
