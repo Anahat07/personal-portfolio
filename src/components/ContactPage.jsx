@@ -14,8 +14,8 @@ const ContactPage = () => {
   const [playerName, setPlayerName] = useState('');
   const [netSwaying, setNetSwaying] = useState(0);
   const [playerMessage, setPlayerMessage] = useState('');
-  const [leaderboard, setLeaderboard] = useState([]);
-  const API_URL = process.env.REACT_APP_API_URL || "";
+  // const [leaderboard, setLeaderboard] = useState([]);
+  // const API_URL = process.env.REACT_APP_API_URL || "";
 
   //   const deleteEntry = (index) => {
   //   setLeaderboard(prev => prev.filter((_, i) => i !== index));
@@ -24,61 +24,61 @@ const ContactPage = () => {
   const gameRef = useRef(null);
   const animationRef = useRef(null);
 
-  // Persist leaderboard on change
-  useEffect(() => {
-    fetch(`${API_URL}/api/leaderboard`)
-      .then(res => res.json())
-      .then(data => setLeaderboard(data));
-  }, []);
+  // // Persist leaderboard on change
+  // useEffect(() => {
+  //   fetch(`${API_URL}/api/leaderboard`)
+  //     .then(res => res.json())
+  //     .then(data => setLeaderboard(data));
+  // }, []);
 
-  const submitScore = async () => {
-    if (!playerName.trim()) return;
+  // const submitScore = async () => {
+  //   if (!playerName.trim()) return;
 
-    const finalScore = score;
-    const message = playerMessage.trim() || "> echo 'No message entered.'";
-    const newEntry = { name: playerName, score: finalScore, message };
+  //   const finalScore = score;
+  //   const message = playerMessage.trim() || "> echo 'No message entered.'";
+  //   const newEntry = { name: playerName, score: finalScore, message };
 
-    try {
-      console.log("Submitting score to /api/submitScore");
+  //   try {
+  //     console.log("Submitting score to /api/submitScore");
 
-      // Use the proxy path (without localhost:4000)
-      const res = await fetch(`${API_URL}/api/submitScore`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newEntry)
-      });
+  //     // Use the proxy path (without localhost:4000)
+  //     const res = await fetch(`${API_URL}/api/submitScore`, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(newEntry)
+  //     });
 
-      console.log("Response status:", res.status);
+  //     console.log("Response status:", res.status);
 
-      if (!res.ok) {
-        const errText = await res.text();
-        console.error("❌ Server error response:", errText);
-        throw new Error(`Server returned ${res.status}: ${errText}`);
-      }
+  //     if (!res.ok) {
+  //       const errText = await res.text();
+  //       console.error("❌ Server error response:", errText);
+  //       throw new Error(`Server returned ${res.status}: ${errText}`);
+  //     }
 
-      const data = await res.json();
-      console.log("✅ Score submitted successfully:", data);
+  //     const data = await res.json();
+  //     console.log("✅ Score submitted successfully:", data);
 
-      if (data.leaderboard) {
-        setLeaderboard(data.leaderboard);
-      }
-    } catch (err) {
-      console.error("❌ Full error details:", err);
+  //     if (data.leaderboard) {
+  //       setLeaderboard(data.leaderboard);
+  //     }
+  //   } catch (err) {
+  //     console.error("❌ Full error details:", err);
 
-      // Fallback: Update UI locally if backend fails
-      const updatedLeaderboard = [...leaderboard, newEntry]
-        .sort((a, b) => b.score - a.score);
+  //     // Fallback: Update UI locally if backend fails
+  //     const updatedLeaderboard = [...leaderboard, newEntry]
+  //       .sort((a, b) => b.score - a.score);
 
-      setLeaderboard(updatedLeaderboard);
-      alert("Score saved locally (backend not available)");
-    }
+  //     setLeaderboard(updatedLeaderboard);
+  //     alert("Score saved locally (backend not available)");
+  //   }
 
-    setShowScore(false);
-    setPlayerName('');
-    setPlayerMessage('');
-    setScore(0);
-    setAttempts(0);
-  };
+  //   setShowScore(false);
+  //   setPlayerName('');
+  //   setPlayerMessage('');
+  //   setScore(0);
+  //   setAttempts(0);
+  // };
 
   const resetBall = useCallback(() => {
     setBallPosition({ x: 20, y: 85 });
@@ -337,7 +337,7 @@ const ContactPage = () => {
                   >
                     RESET
                   </button>
-                  <button
+                  {/* <button
                     onClick={() => setShowScore(true)}
                     disabled={score === 0}
                     className={`flex-1 py-2 px-4 rounded text-sm transition-colors duration-500 ${score > 0
@@ -346,14 +346,14 @@ const ContactPage = () => {
                       }`}
                   >
                     SUBMIT SCORE
-                  </button>
+                  </button> */}
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Leaderboard */}
+        {/* Leaderboard
         <div className="mt-8 p-6 rounded-lg bg-[#383E30] dark:bg-background-light font-mono">
           <h3 className="text-green-400 dark:text-green-400 font-bold mb-4 flex items-center">
             <Trophy className="w-5 h-5 mr-2" />
@@ -384,14 +384,14 @@ const ContactPage = () => {
                         Delete
                       </button>
                     </td> */}
-                  </tr>
+                  {/* </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
+        </div> */}
 
-        {/* Score Submission Modal */}
+        {/* Score Submission Modal
         {showScore && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
             <div className="p-6 rounded-lg bg-[#383E30] dark:bg-background-light font-mono max-w-sm w-full">
@@ -419,7 +419,7 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
