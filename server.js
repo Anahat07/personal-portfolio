@@ -9,26 +9,14 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Enable CORS for all origins in production, localhost in development
-const allowedOrigins = process.env.NODE_ENV === 'production' 
-  ? ["https://anahat-chhatwal.vercel.app"]
-  : ["http://localhost:3000"];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
+  origin: process.env.NODE_ENV === 'production' 
+    ? ["https://anahat-chhatwal.vercel.app"] // Replace with your actual Vercel URL
+    : ["http://localhost:3000"],
   credentials: true
 }));
 
 app.use(express.json());
-
 
 // Path to the leaderboard file
 const filePath = path.join(__dirname, "leaderboard.json");
@@ -114,9 +102,15 @@ app.get("/api/test", (req, res) => {
     res.json({ message: "Server is working!", timestamp: new Date().toISOString() });
 });
 
+// Root endpoint
+app.get("/", (req, res) => {
+    res.json({ message: "Basketball Game API is running!" });
+});
+
 // Start server
 app.listen(PORT, () => {
-    console.log(`✅ Server running at http://localhost:${PORT}`);
-    console.log(`📊 Leaderboard API: http://localhost:${PORT}/api/leaderboard`);
-    console.log(`🧪 Test endpoint: http://localhost:${PORT}/api/test`);
+    console.log(`✅ Server running on port ${PORT}`);
+    console.log(`📊 Leaderboard API: /api/leaderboard`);
+    console.log(`🎯 Submit score: /api/submitScore`);
+    console.log(`🧪 Test endpoint: /api/test`);
 });
