@@ -33,7 +33,7 @@ const ContactPage = () => {
   const submitScore = async () => {
     if (!playerName.trim()) return;
 
-    const finalScore = score; // store current score
+    const finalScore = score;
     const message = playerMessage.trim() || "> echo 'No message entered.'";
     const newEntry = { name: playerName, score: finalScore, message };
 
@@ -44,13 +44,20 @@ const ContactPage = () => {
         body: JSON.stringify(newEntry)
       });
 
+      if (!res.ok) {
+        const errText = await res.text();
+        console.error("❌ Backend error:", errText);
+        return;
+      }
+
       const data = await res.json();
+      console.log("✅ Score submitted:", data);
+
       if (data.leaderboard) setLeaderboard(data.leaderboard);
     } catch (err) {
-      console.error("Error submitting score:", err);
+      console.error("❌ Network error submitting score:", err);
     }
 
-    // reset AFTER submission
     setShowScore(false);
     setPlayerName('');
     setPlayerMessage('');
