@@ -384,7 +384,7 @@ const ContactPage = () => {
                         Delete
                       </button>
                     </td> */}
-                  {/* </tr>
+        {/* </tr>
                 ))}
               </tbody>
             </table>
@@ -422,7 +422,14 @@ const ContactPage = () => {
         )} */}
       </div>
     </div>
+
   );
+
+  {/* Footer */ }
+  <footer className="w-full py-4 text-center text-sm text-white dark:text-black mt-8">
+    © 2025 - made with <span className="text-[#8F9A81]">❤️</span> by Anahat
+  </footer>
+
 };
 
 export default ContactPage;
