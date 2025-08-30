@@ -25,7 +25,7 @@ const ContactPage = () => {
 
   // Persist leaderboard on change
   useEffect(() => {
-    fetch("http://localhost:4000/api/leaderboard")
+    fetch("/api/leaderboard")  // Remove "http://localhost:4000"
       .then(res => res.json())
       .then(data => setLeaderboard(data));
   }, []);
@@ -38,29 +38,35 @@ const ContactPage = () => {
     const newEntry = { name: playerName, score: finalScore, message };
 
     try {
-      const res = await fetch("http://localhost:4000/api/submitScore", {
+      console.log("Submitting score to /api/submitScore");
+
+      // Use the proxy path (without localhost:4000)
+      const res = await fetch("/api/submitScore", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEntry)
       });
 
+      console.log("Response status:", res.status);
+
       if (!res.ok) {
-        throw new Error(`Server returned ${res.status}`);
+        const errText = await res.text();
+        console.error("❌ Server error response:", errText);
+        throw new Error(`Server returned ${res.status}: ${errText}`);
       }
 
       const data = await res.json();
-      console.log("✅ Score submitted:", data);
+      console.log("✅ Score submitted successfully:", data);
 
       if (data.leaderboard) {
         setLeaderboard(data.leaderboard);
       }
     } catch (err) {
-      console.error("❌ Error submitting score:", err);
+      console.error("❌ Full error details:", err);
 
       // Fallback: Update UI locally if backend fails
       const updatedLeaderboard = [...leaderboard, newEntry]
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 10); // Keep only top 10
+        .sort((a, b) => b.score - a.score);
 
       setLeaderboard(updatedLeaderboard);
       alert("Score saved locally (backend not available)");
