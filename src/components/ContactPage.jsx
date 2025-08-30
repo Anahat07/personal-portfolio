@@ -15,20 +15,15 @@ const ContactPage = () => {
   const [netSwaying, setNetSwaying] = useState(0);
   const [playerMessage, setPlayerMessage] = useState('');
 
-  const deleteEntry = (index) => {
-  setLeaderboard(prev => prev.filter((_, i) => i !== index));
-};
+  //   const deleteEntry = (index) => {
+  //   setLeaderboard(prev => prev.filter((_, i) => i !== index));
+  // };
 
   // Load leaderboard from localStorage or use default
   const [leaderboard, setLeaderboard] = useState(() => {
     const saved = localStorage.getItem('leaderboard');
     return saved
-      ? JSON.parse(saved)
-      : [
-          { name: 'CodeMaster', score: 15 },
-          { name: 'TerminalPro', score: 12 },
-          { name: 'ReactDev', score: 10 }
-        ];
+      ? JSON.parse(saved) : [];
   });
 
   const gameRef = useRef(null);
@@ -81,7 +76,7 @@ const ContactPage = () => {
       x: prev.x * 0.985,
       y: prev.y + 0.6
     }));
-    
+
     setBallRotation(prev => prev + Math.abs(ballVelocity.x) * 8);
   }, [ballVelocity.x, ballVelocity.y, checkScore, resetBall]);
 
@@ -97,7 +92,7 @@ const ContactPage = () => {
 
   const shootBall = (e) => {
     if (isShootingAnimating) return;
-    
+
     const rect = gameRef.current.getBoundingClientRect();
     const clickX = ((e.clientX - rect.left) / rect.width) * 100;
     const clickY = ((e.clientY - rect.top) / rect.height) * 100;
@@ -139,7 +134,7 @@ const ContactPage = () => {
     { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', url: 'https://www.linkedin.com/in/anahat-kc/', command: 'open -a "LinkedIn"' },
     { icon: <Github className="w-5 h-5" />, label: 'GitHub', url: 'https://github.com/Anahat07', command: 'git clone github.com/yourprofile' },
     { icon: <Mail className="w-5 h-5" />, label: 'Email', url: 'mailto:anahat.chhatwal@uwaterloo.ca', command: 'mail -s "Hello" anahat.chhatwal@uwaterloo.ca' },
-    { icon: <Download className="w-5 h-5" />, label: 'Resume', url: 'https://drive.google.com/file/d/1Wx4nDeI0qDC4RiV5qTa80Zk878JL_LlK/view?usp=sharing', command: 'curl -O /path/to/resume.pdf' }
+    { icon: <Download className="w-5 h-5" />, label: 'Resume', url: 'https://drive.google.com/file/d/1SiuIrTdgwhxA06qCnJUd2WhSJnffn-bz/view?usp=sharing', command: 'curl -O /path/to/resume.pdf' }
   ];
 
   return (
@@ -149,7 +144,7 @@ const ContactPage = () => {
         <div className="w-full border-b border-[#4f5a3c] flex flex-col items-center pb-4">
           <h1 className="text-2xl font-bold text-foreground dark:text-white font-mono">&gt; contact</h1>
           <div className="flex justify-center gap-8 text-sm sm:text-base font-mono">
-            {["about","projects","experiences","contact"].map(item => (
+            {["about", "projects", "experiences", "contact"].map(item => (
               <Link key={item} to={item === "about" ? "/" : `/${item}`} className="text-foreground dark:text-white relative group">
                 <span className="group-hover:underline group-hover:animate-flicker transition-colors duration-300">{item}</span>
               </Link>
@@ -180,7 +175,7 @@ const ContactPage = () => {
               <Zap className="w-6 h-6 mr-2 text-green-400" />
               ./connect_with_me.sh
             </h2>
-            
+
             <div className="space-y-4">
               {contactLinks.map((link, index) => (
                 <div key={index} className="group">
@@ -212,7 +207,7 @@ const ContactPage = () => {
               <Target className="w-6 h-6 mr-2 text-green-400" />
               ./basketball_game.exe
             </h2>
-            
+
             <p className="mb-6 text-sm text-green-400 dark:text-black">
               I love basketball, so I couldn’t resist adding this mini-game 🏀. Launch the ball, make every shot count, and see if you can climb the leaderboard higher than me!
             </p>
@@ -233,23 +228,23 @@ const ContactPage = () => {
                 </div>
 
                 {/* Game Canvas */}
-                <div 
+                <div
                   ref={gameRef}
                   onClick={shootBall}
                   className="relative w-full h-80 rounded border-2 cursor-crosshair bg-gradient-to-b from-sky-200 to-green-300 dark:from-gray-700 dark:to-green-900 border-green-400 overflow-hidden"
                 >
                   {/* Court Floor */}
                   <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-amber-600 to-amber-500 dark:from-amber-800 dark:to-amber-700"></div>
-                  
+
                   {/* Court Lines */}
                   <div className="absolute inset-0 text-white dark:text-green-200">
                     <div className="absolute bottom-16 right-20 w-16 h-0.5 bg-current opacity-80"></div>
-                    <div className="absolute right-8 bottom-12 w-20 h-20 border-2 border-current rounded-full opacity-60" style={{borderTopColor: 'transparent', borderLeftColor: 'transparent'}}></div>
+                    <div className="absolute right-8 bottom-12 w-20 h-20 border-2 border-current rounded-full opacity-60" style={{ borderTopColor: 'transparent', borderLeftColor: 'transparent' }}></div>
                   </div>
 
                   {/* Backboard */}
                   <div className="absolute right-8 top-16 w-1 h-16 bg-white dark:bg-gray-300 shadow-md"></div>
-                  
+
                   {/* Basketball Hoop Ring */}
                   <div className="absolute right-12 top-24">
                     <div className="w-12 h-2 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full shadow-lg relative">
@@ -257,7 +252,7 @@ const ContactPage = () => {
                       <div className="absolute -top-0.5 left-1 w-2 h-3 bg-gray-700 rounded-sm"></div>
                       <div className="absolute -top-0.5 right-1 w-2 h-3 bg-gray-700 rounded-sm"></div>
                     </div>
-                    
+
                     {/* Basketball Net */}
                     <div className="relative w-12 h-8 overflow-hidden">
                       {[...Array(8)].map((_, i) => (
@@ -281,7 +276,7 @@ const ContactPage = () => {
                   </div>
 
                   {/* Basketball */}
-                  <div 
+                  <div
                     className="absolute w-6 h-6 transition-transform duration-75 shadow-xl z-10"
                     style={{
                       left: `${ballPosition.x}%`,
@@ -316,11 +311,10 @@ const ContactPage = () => {
                   <button
                     onClick={() => setShowScore(true)}
                     disabled={score === 0}
-                    className={`flex-1 py-2 px-4 rounded text-sm transition-colors duration-500 ${
-                      score > 0
+                    className={`flex-1 py-2 px-4 rounded text-sm transition-colors duration-500 ${score > 0
                         ? 'bg-green-400 hover:bg-green-300 dark:bg-green-500 dark:hover:bg-green-400 text-black'
                         : 'bg-gray-500 text-gray-300 cursor-not-allowed'
-                    }`}
+                      }`}
                   >
                     SUBMIT SCORE
                   </button>
@@ -349,18 +343,18 @@ const ContactPage = () => {
               <tbody>
                 {leaderboard.map((entry, index) => (
                   <tr key={index} className="border-b border-gray-200 dark:border-green-800">
-                    <td className="py-2 text-white dark:text-black">#{index+1}</td>
+                    <td className="py-2 text-white dark:text-black">#{index + 1}</td>
                     <td className="py-2 text-white dark:text-black">{entry.name}</td>
                     <td className="py-2 text-white dark:text-black">{entry.score}</td>
                     <td className="py-2 text-white dark:text-black">{entry.message}</td>
-                    <td>
+                    {/* <td>
                       <button 
                         onClick={() => deleteEntry(index)}
                         className="text-red-500 hover:underline text-xs"
                       >
                         Delete
                       </button>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>
@@ -382,14 +376,14 @@ const ContactPage = () => {
                 className="w-full p-3 rounded border mb-4 bg-gray-50 border-gray-300 text-gray-800 font-mono"
               />
               <div className="mb-4">
-              <input
-                type="text"
-                placeholder="Optional: Add a message"
-                value={playerMessage}
-                onChange={e => setPlayerMessage(e.target.value)}
-                className="w-full p-3 rounded border mb-2 bg-gray-50 border-gray-300 text-gray-800 font-mono"
-              />
-            </div>
+                <input
+                  type="text"
+                  placeholder="Optional: Add a message"
+                  value={playerMessage}
+                  onChange={e => setPlayerMessage(e.target.value)}
+                  className="w-full p-3 rounded border mb-2 bg-gray-50 border-gray-300 text-gray-800 font-mono"
+                />
+              </div>
               <div className="flex gap-2">
                 <button onClick={() => setShowScore(false)} className="flex-1 py-2 px-4 rounded transition-colors duration-500 bg-green-400 hover:bg-green-300 dark:bg-green-500 dark:hover:bg-green-400 text-black">Cancel</button>
                 <button onClick={submitScore} disabled={!playerName.trim()} className={`flex-1 py-2 px-4 rounded transition-colors duration-500 ${playerName.trim() ? 'bg-green-400 hover:bg-green-300 dark:bg-green-500 dark:hover:bg-green-400 text-black' : 'bg-gray-500 text-gray-300 cursor-not-allowed'}`}>Submit</button>

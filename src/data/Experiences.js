@@ -11,7 +11,7 @@ export const experiences = [
     type: "education",
     icon: <GraduationCap className="w-5 h-5" />,
     description: "Global Action Council (Co-Director), Breezecode (Co-Director), Energy SHSM",
-    skills:[],
+    skills: [],
     achievement: "Community Involvement Award, Schulich Leaders Nominee"
   },
   {
@@ -38,7 +38,7 @@ export const experiences = [
     skills: ["Python", "3D Printing", "Game Dev", "Robotics", "Mentorship", "Coaching"],
     achievement: "Mentored FLL team; enhancing coding, teamwork, & design skills",
     links: [
-    { type: "website", url: "https://envisionrobotics.com/" }
+      { type: "website", url: "https://envisionrobotics.com/" }
     ]
   },
   {
@@ -53,8 +53,8 @@ export const experiences = [
     skills: ["Machine Learning", "NLP", "Neural Networks", "LSTMs", "Python"],
     achievement: "Built NLP tweet analyzer to predict stock market trends",
     links: [
-      { type: "website", url: "https://www.inspiritai.com/"},
-      {type: "linkedin", url: "https://www.linkedin.com/in/anahat-kc/details/experience/"}
+      { type: "website", url: "https://www.inspiritai.com/" },
+      { type: "linkedin", url: "https://www.linkedin.com/in/anahat-kc/details/experience/" }
     ]
   },
   {
@@ -66,29 +66,29 @@ export const experiences = [
     type: "leadership",
     icon: <Users className="w-5 h-5" />,
     description: "Explored computer graphics at DGP",
-    skills: ["Computer Animation", "Blender", "Python", "NumPy","SLERP"],
+    skills: ["Computer Animation", "Blender", "Python", "NumPy", "SLERP"],
     achievement: "3D animations using interpolation and transformation techniques",
     links: [
-      {type: "website", url:"https://www.dgp.toronto.edu/"}
+      { type: "website", url: "https://www.dgp.toronto.edu/" }
     ]
   },
   {
-  id: 6,
-  title: "BudgetBites Project",
-  company: "Moral Code Hackathon",
-  location: "University of Toronto",
-  date: "May 2024",
-  type: "project",
-  icon: <Code className="w-5 h-5" />,
-  description: "Platform for discounted healthy groceries and personalized recipes",
-  skills: ["HTML", "CSS", "JavaScript", "Chrome Extensions", "UX/UI Design"],
-  achievement: "Top 4 Finalist",
-  links: [
-    {type: "website", url:"https://drive.google.com/file/d/1hGoxEAZxdoNydfPC5D4T8ZGZIR-wA068/view"},
-    {type: "website", url:"https://drive.google.com/file/d/1iJ0l4zLRdTxNOFJd5irDw9XgyyE0WZNh/view"},
-    {type: "github", url:"https://github.com/Anahat07/BudgetBites"},
-    {type: "linkedin", url: "https://www.linkedin.com/posts/activity-7193799796040634369-Xn27/"}
-  ]
+    id: 6,
+    title: "BudgetBites Project",
+    company: "Moral Code Hackathon",
+    location: "University of Toronto",
+    date: "May 2024",
+    type: "project",
+    icon: <Code className="w-5 h-5" />,
+    description: "Platform for discounted healthy groceries and personalized recipes",
+    skills: ["HTML", "CSS", "JavaScript", "Chrome Extensions", "UX/UI Design"],
+    achievement: "Top 4 Finalist",
+    links: [
+      { type: "website", url: "https://drive.google.com/file/d/1hGoxEAZxdoNydfPC5D4T8ZGZIR-wA068/view" },
+      { type: "website", url: "https://drive.google.com/file/d/1iJ0l4zLRdTxNOFJd5irDw9XgyyE0WZNh/view" },
+      { type: "github", url: "https://github.com/Anahat07/BudgetBites" },
+      { type: "linkedin", url: "https://www.linkedin.com/posts/activity-7193799796040634369-Xn27/" }
+    ]
   },
   {
     id: 7,
@@ -102,8 +102,8 @@ export const experiences = [
     skills: ["Leadership", "Project Management", "Team Management"],
     achievement: "15+ events; 3000+ students",
     links: [
-    { type: "website", url: "https://empower-ed.ca/" },
-    { type: "github", url: "https://github.com/empowerEDu/EmpowerED" }
+      { type: "website", url: "https://empower-ed.ca/" },
+      { type: "github", url: "https://github.com/empowerEDu/EmpowerED" }
     ]
   },
   {
@@ -122,20 +122,20 @@ export const experiences = [
     ]
   },
   {
-  id: 9,
-  title: "Youth Bringing Life to Human Rights Award",
-  company: "YRP & United for Human Rights Canada",
-  location: "Ontario, Canada",
-  date: "Nov 2024",
-  type: "achievement",
-  icon: <Award className="w-5 h-5" />,
-  description: "1st-place winner for contributions to human rights and community impact",
-  skills: [],
-  achievement: "$1,000 Scholarship Awarded",
-  links: [
+    id: 9,
+    title: "Youth Bringing Life to Human Rights Award",
+    company: "YRP & United for Human Rights Canada",
+    location: "Ontario, Canada",
+    date: "Nov 2024",
+    type: "achievement",
+    icon: <Award className="w-5 h-5" />,
+    description: "1st-place winner for contributions to human rights and community impact",
+    skills: [],
+    achievement: "$1,000 Scholarship Awarded",
+    links: [
       { type: "linkedin", url: "https://www.linkedin.com/posts/activity-7263260266232979456-HhtA/" }
     ]
-},
+  },
   {
     id: 10,
     title: "Website Design Intern",
@@ -149,62 +149,62 @@ export const experiences = [
     achievement: "Enhanced platform functionality for high school users",
   },
   {
-  id: 11,
-  title: "Greg Goff Leadership Scholarship Winner",
-  company: "National Society of High School Scholars (NSHSS)",
-  location: "USA",
-  date: "Dec 2024",
-  type: "achievement",
-  icon: <Award className="w-5 h-5" />,
-  description: "One of 5 students awarded for leadership, community service, and positive impact",
-  skills: [],
-  achievement: "$2,000 USD scholarship"
+    id: 11,
+    title: "Greg Goff Leadership Scholarship Winner",
+    company: "National Society of High School Scholars (NSHSS)",
+    location: "USA",
+    date: "Dec 2024",
+    type: "achievement",
+    icon: <Award className="w-5 h-5" />,
+    description: "One of 5 students awarded for leadership, community service, and positive impact",
+    skills: [],
+    achievement: "$2,000 USD scholarship"
   },
   {
-  id: 12,
-  title: "Aspirations in Computing National Award Winner",
-  company: "NCWIT Ontario Affiliate",
-  location: "Canada",
-  date: "Apr 2025",
-  type: "achievement",
-  icon: <Award className="w-5 h-5" />,
-  description: "Chosen from 300+ applicants for excellence in computing and advocacy for women in tech",
-  skills: [],
-  achievement: "National trophy at CAN-CWIC '25",
-  links: [
+    id: 12,
+    title: "Aspirations in Computing National Award Winner",
+    company: "NCWIT Ontario Affiliate",
+    location: "Canada",
+    date: "Apr 2025",
+    type: "achievement",
+    icon: <Award className="w-5 h-5" />,
+    description: "Chosen from 300+ applicants for excellence in computing and advocacy for women in tech",
+    skills: [],
+    achievement: "National trophy at CAN-CWIC '25",
+    links: [
       { type: "website", url: "https://www.aspirations.org/people/anahat-c/146307" }
     ]
-},
-{
-  id: 13,
-  title: "Micro Tech Grant",
-  company: "DMZ and myBlueprint",
-  location: "Toronto, ON",
-  date: "June 2025",
-  type: "achievement",
-  icon: <Award className="w-5 h-5" />,
-  description: "1 of 20 recipients for our NomNom app supporting domestic abuse survivors",
-  skills: ["Mobile App Development", "UX/UI Design", "Social Impact"],
-  achievement: "$500 Micro Tech Grant",
-  links:[
-    {type: "website", url: "https://funded-micro-grants-damianstory-damianstorys-projects.vercel.app/"}
-  ]
-},
-{
-  id: 14,
-  title: "Sean Jackson Scholarship Recipient",
-  company: "Meridian Credit Union",
-  location: "Canada",
-  date: "July 2025",
-  type: "achievement",
-  icon: <Award className="w-5 h-5" />,
-  description: "Awarded the Sean Jackson Scholarship, recognizing exceptional innovation, leadership, and community impact",
-  skills: [],
-  achievement: "Awarded $10,000",
-  links:[
-    {type: "website", url:"https://www.instagram.com/p/DNGa-L9OIA-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="}
-  ]
-},
+  },
+  {
+    id: 13,
+    title: "Micro Tech Grant",
+    company: "DMZ and myBlueprint",
+    location: "Toronto, ON",
+    date: "June 2025",
+    type: "achievement",
+    icon: <Award className="w-5 h-5" />,
+    description: "1 of 20 recipients for our NomNom app supporting domestic abuse survivors",
+    skills: ["Mobile App Development", "UX/UI Design", "Social Impact"],
+    achievement: "$500 Micro Tech Grant",
+    links: [
+      { type: "website", url: "https://funded-micro-grants-damianstory-damianstorys-projects.vercel.app/" }
+    ]
+  },
+  {
+    id: 14,
+    title: "Sean Jackson Scholarship Recipient",
+    company: "Meridian Credit Union",
+    location: "Canada",
+    date: "July 2025",
+    type: "achievement",
+    icon: <Award className="w-5 h-5" />,
+    description: "Awarded the Sean Jackson Scholarship, recognizing exceptional innovation, leadership, and community impact",
+    skills: [],
+    achievement: "Awarded $10,000",
+    links: [
+      { type: "website", url: "https://www.instagram.com/p/DNGa-L9OIA-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+    ]
+  },
   {
     id: 15,
     title: "CS/BBA Student",

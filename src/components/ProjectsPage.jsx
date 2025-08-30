@@ -11,6 +11,8 @@ import { hackathonProjects } from "../data/HackathonProjects";
 // Define project categories shown in drawer
 const categories = ["Personal", "School", "Hackathons", "Community"];
 
+const isMobile = window.innerWidth < 640; // sm breakpoint
+
 // Map category names to corresponding project data arrays
 const projectCategories = {
   Personal: personalProjects,
@@ -96,7 +98,7 @@ const ProjectsPage = () => {
           {/* Drawer Section */}
           <motion.div
             initial={{ x: 0 }}
-            animate={{ x: activeCategory ? -20 : 0 }} // Slight slide left when a category is active
+            animate={{ x: !isMobile && activeCategory ? -40 : 0 }} // only shift on desktop
             transition={{ type: "spring", stiffness: 80 }}
             className="relative w-full sm:w-[400px] mx-auto"
           >
@@ -119,11 +121,10 @@ const ProjectsPage = () => {
                 {categories.map((category) => (
                   <motion.div
                     key={category}
-                    className={`relative w-full max-w-[400px] px-6 py-3 rounded-t-lg cursor-pointer text-center font-mono text-lg bg-[#6b7b58] dark:bg-[#a9b79c] text-white dark:text-[#383e30] shadow-md hover:shadow-lg ${
-                      activeCategory === category
+                    className={`relative w-full max-w-[400px] px-6 py-3 rounded-t-lg cursor-pointer text-center font-mono text-lg bg-[#6b7b58] dark:bg-[#a9b79c] text-white dark:text-[#383e30] shadow-md hover:shadow-lg ${activeCategory === category
                         ? "ring-2 ring-white dark:ring-[#383e30]"
                         : ""
-                    }`}
+                      }`}
                     variants={folderVariants}
                     initial="initial"
                     whileHover="hover"
@@ -145,20 +146,18 @@ const ProjectsPage = () => {
           {/* Folder Window Section */}
           {activeCategory && (
             <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: -120 }} // Slide in and fade in on open
+              initial={{ opacity: 0, x: isMobile ? 0 : 40 }} // start offset only on desktop
+              animate={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 50, damping: 14 }}
-              className="mt-10 sm:mt-0 w-full sm:w-[650px] rounded-xl shadow-lg bg-white dark:bg-[#2f3327] overflow-hidden"
+              className="mt-12 sm:mt-0 w-full sm:w-[650px] rounded-xl shadow-lg bg-white dark:bg-[#2f3327] overflow-hidden"
             >
               {/* Mac-style window control bar */}
               <div className="flex items-center justify-between px-4 py-2 bg-[#8f9a81]">
                 <div className="flex space-x-2">
-                  {/* Close, minimize, maximize buttons */}
                   <span className="w-3 h-3 rounded-full bg-red-500" />
                   <span className="w-3 h-3 rounded-full bg-yellow-500" />
                   <span className="w-3 h-3 rounded-full bg-green-500" />
                 </div>
-                {/* Window title showing active category */}
                 <span className="font-mono text-sm text-white">
                   {activeCategory.toLowerCase()}_projects — anahat.dev
                 </span>
@@ -172,12 +171,10 @@ const ProjectsPage = () => {
                     key={idx}
                     className="relative flex flex-col items-center justify-center text-center bg-[#6b7b58] dark:bg-[#a9b79c] text-white dark:text-[#2f3327] font-mono rounded-t-[12px] rounded-b-[6px] shadow-md px-2 py-6 cursor-pointer hover:scale-105 transition"
                     onClick={() => {
-                      // Select project and reset image carousel index on click
                       setSelectedProject(project);
                       setCurrentImageIndex(0);
                     }}
                   >
-                    {/* Decorative top band */}
                     <div className="absolute -top-2 left-0 w-10 h-3 rounded-t-[6px] bg-[#4f5a3c] dark:bg-[#c0d1b2]" />
                     <span className="text-sm font-semibold">{project.title}</span>
                   </div>
@@ -202,7 +199,7 @@ const ProjectsPage = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="bg-[#383e30] text-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto font-mono"
+              className="bg-[#383e30] text-white rounded-lg shadow-xl w-[90%] sm:max-w-2xl max-h-[80vh] overflow-y-auto font-mono"
             >
               {/* Modal content container */}
               <div className="relative">
@@ -237,7 +234,7 @@ const ProjectsPage = () => {
                       <img
                         src={selectedProject.images[currentImageIndex]}
                         alt={selectedProject.title}
-                        className="max-w-[400px] max-h-[250px] mx-auto object-contain rounded"
+                        className="w-full max-w-full h-auto max-h-[250px] mx-auto object-contain rounded"
                       />
                       {/* Carousel controls if multiple images */}
                       {selectedProject.images.length > 1 && (
@@ -284,49 +281,49 @@ const ProjectsPage = () => {
                     selectedProject.links?.website ||
                     selectedProject.links?.devpost ||
                     selectedProject.links?.demo) && (
-                    <div className="flex flex-wrap gap-4">
-                      {selectedProject.links.github && (
-                        <a
-                          href={selectedProject.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
-                        >
-                          GitHub
-                        </a>
-                      )}
-                      {selectedProject.links.devpost && (
-                        <a
-                          href={selectedProject.links.devpost}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
-                        >
-                          Devpost
-                        </a>
-                      )}
-                      {selectedProject.links.website && (
-                        <a
-                          href={selectedProject.links.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
-                        >
-                          Website
-                        </a>
-                      )}
-                      {selectedProject.links.demo && (
-                        <a
-                          href={selectedProject.links.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
-                        >
-                          Demo
-                        </a>
-                      )}
-                    </div>
-                  )}
+                      <div className="flex flex-wrap gap-4">
+                        {selectedProject.links.github && (
+                          <a
+                            href={selectedProject.links.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
+                          >
+                            GitHub
+                          </a>
+                        )}
+                        {selectedProject.links.devpost && (
+                          <a
+                            href={selectedProject.links.devpost}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
+                          >
+                            Devpost
+                          </a>
+                        )}
+                        {selectedProject.links.website && (
+                          <a
+                            href={selectedProject.links.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
+                          >
+                            Website
+                          </a>
+                        )}
+                        {selectedProject.links.demo && (
+                          <a
+                            href={selectedProject.links.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-[#8f9a81] text-white rounded hover:bg-[#566246]"
+                          >
+                            Demo
+                          </a>
+                        )}
+                      </div>
+                    )}
                 </div>
               </div>
             </motion.div>

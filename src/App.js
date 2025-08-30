@@ -31,8 +31,8 @@ function App() {
   return (
     <div className={isDark ? "dark" : ""}>
       <div className="min-h-screen bg-background-light dark:bg-background-dark transition-colors duration-500 flex flex-col items-center justify-center relative"
-      style={{ cursor: 'url("/cursors/cursor.png") 0 0, auto' }}>
-        
+        style={{ cursor: 'url("/cursors/cursor.png") 0 0, auto' }}>
+
         {/* Toggle Button - top right */}
         <button
           onClick={() => setIsDark(!isDark)}
@@ -42,7 +42,7 @@ function App() {
           {isDark ? <Sun size={20} /> : <Moon size={20} />}
         </button>
 
-        
+
         {/* Routes */}
         <Routes>
           <Route path="/" element={<Terminal />} />

@@ -17,16 +17,16 @@ export const hackathonProjects = [
   },
   {
     title: "DeBlizzard - ElleHacks",
-    features: ["Google Maps API Integration: Allows users to view and book available volunteers in their area, with real-time mapping and location tracking.", 
-              "User-Friendly Interface: Designed with HTML, CSS, and JavaScript for a seamless and intuitive experience on both the website and app prototype.", 
-              "Real-Time Tracking: Monitors and displays the progress of snow removal tasks in real time for users and volunteers."],
+    features: ["Google Maps API Integration: Allows users to view and book available volunteers in their area, with real-time mapping and location tracking.",
+      "User-Friendly Interface: Designed with HTML, CSS, and JavaScript for a seamless and intuitive experience on both the website and app prototype.",
+      "Real-Time Tracking: Monitors and displays the progress of snow removal tasks in real time for users and volunteers."],
     techStack: ["HTML", "CSS", "JavaScript, Google Maps API", "Marvel Prototyping"],
     images: ["/hackathon_project_images/deblizzard-1.png",
-             "/hackathon_project_images/deblizzard-2.png",
-             "/hackathon_project_images/deblizzard-3.png",
-             "/hackathon_project_images/deblizzard-4.png",
-             "/hackathon_project_images/deblizzard-5.png",
-             "/hackathon_project_images/deblizzard-6.png",
+      "/hackathon_project_images/deblizzard-2.png",
+      "/hackathon_project_images/deblizzard-3.png",
+      "/hackathon_project_images/deblizzard-4.png",
+      "/hackathon_project_images/deblizzard-5.png",
+      "/hackathon_project_images/deblizzard-6.png",
     ],
     links: {
       github: "https://github.com/Anahat07/DeBlizzard",
@@ -42,11 +42,11 @@ export const hackathonProjects = [
     ],
     techStack: ["HTML", "CSS", "JavaScript", "Node.js", "OpenAI API", "Google Maps API", "Google Solar API"],
     images: ["/hackathon_project_images/solarise-1.png",
-            "/hackathon_project_images/solarise-2.png",
-            "/hackathon_project_images/solarise-3.png",
-            "/hackathon_project_images/solarise-4.png",
-            "/hackathon_project_images/solarise-5.png",
-            "/hackathon_project_images/solarise-6.png",
+      "/hackathon_project_images/solarise-2.png",
+      "/hackathon_project_images/solarise-3.png",
+      "/hackathon_project_images/solarise-4.png",
+      "/hackathon_project_images/solarise-5.png",
+      "/hackathon_project_images/solarise-6.png",
     ],
     links: {
       github: "https://github.com/Anahat07/Solarise",
@@ -55,14 +55,14 @@ export const hackathonProjects = [
   },
   {
     title: "BudgetBites - EWB Moral Code",
-    features: ["Google Chrome Extension Integration: Provides users with discount codes as they browse grocery store websites in real-time.", 
-              "Personalized Coupon and Recipe Generator: Curates shopping experiences by offering tailored coupons and generating recipes based on user preferences and available ingredients.",
-              "Mobile-Friendly Design: Built using Bootstrap to ensure easy accessibility and seamless browsing on mobile devices.",
-              "Google Chrome Extension: Automatically provides real-time discount codes for healthy food items while users browse grocery store websites, streamlining savings through Chrome Extensions API integration."],
+    features: ["Google Chrome Extension Integration: Provides users with discount codes as they browse grocery store websites in real-time.",
+      "Personalized Coupon and Recipe Generator: Curates shopping experiences by offering tailored coupons and generating recipes based on user preferences and available ingredients.",
+      "Mobile-Friendly Design: Built using Bootstrap to ensure easy accessibility and seamless browsing on mobile devices.",
+      "Google Chrome Extension: Automatically provides real-time discount codes for healthy food items while users browse grocery store websites, streamlining savings through Chrome Extensions API integration."],
     techStack: ["HTML", "CSS", "JavaScript", "Chrome Extension"],
     images: ["/hackathon_project_images/budgetbites-1.png",
-            "/hackathon_project_images/budgetbites-2.png",
-            "/hackathon_project_images/budgetbites-3.png"
+      "/hackathon_project_images/budgetbites-2.png",
+      "/hackathon_project_images/budgetbites-3.png"
     ],
     links: {
       github: "https://github.com/Anahat07/BudgetBites",
@@ -72,15 +72,15 @@ export const hackathonProjects = [
   },
   {
     title: "SafeNest - Technova",
-    features: ["Personalized Roadmaps: Customizable financial independence plans tailored to each user's journey.", 
-              "Secure Financial Management Tools: Link bank accounts, track finances, and set personalized financial goals.",
-              "AI-Driven Support Chatbot: Provides real-time guidance, emotional support, and personalized resources.",
-              "Confidential & Secure Environment: Built with PropelAuth for secure user authentication and privacy."],
+    features: ["Personalized Roadmaps: Customizable financial independence plans tailored to each user's journey.",
+      "Secure Financial Management Tools: Link bank accounts, track finances, and set personalized financial goals.",
+      "AI-Driven Support Chatbot: Provides real-time guidance, emotional support, and personalized resources.",
+      "Confidential & Secure Environment: Built with PropelAuth for secure user authentication and privacy."],
     techStack: ["React", "Tailwind CSS", "PropelAuth", "OpenAI API", "Node.js"],
     images: ["/hackathon_project_images/safenest-1.png",
-            "/hackathon_project_images/safenest-2.png",
-            "/hackathon_project_images/safenest-3.png",
-            "/hackathon_project_images/safenest-4.png"
+      "/hackathon_project_images/safenest-2.png",
+      "/hackathon_project_images/safenest-3.png",
+      "/hackathon_project_images/safenest-4.png"
     ],
     links: {
       github: "https://github.com/Anahat07/safenest",
@@ -99,7 +99,7 @@ export const hackathonProjects = [
       "Collaborative Problem-Solving gained first-hand experience in teamwork, rapid prototyping, and adapting to unexpected challenges."],
     techStack: ["Rasberry Pi", "Python", "OpenCV", "API Integration"],
     images: ["/hackathon_project_images/htn1.jpeg",
-            "/hackathon_project_images/htn2.jpeg"
+      "/hackathon_project_images/htn2.jpeg"
     ],
     links: {
       demo: "https://www.linkedin.com/posts/activity-7242155502434971648-UNR5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3YDd0B-QeS1JqgsgeHV5FzjoDrw2-ZbaY"

@@ -15,8 +15,8 @@ const ExperiencesPage = ({ isDarkMode }) => {
   const [carPositionPx, setCarPositionPx] = useState(0);
   const containerRef = useRef(null);
   const contentRef = useRef(null);
-    // total width of the road/timeline
-const roadWidth = ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_EXTRA_END - ROAD_END_MARGIN;
+  // total width of the road/timeline
+  const roadWidth = ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_EXTRA_END - ROAD_END_MARGIN;
 
   const typeColors = {
     work: "bg-blue-500",
@@ -136,32 +136,32 @@ const roadWidth = ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_E
   );
 
   const ExperienceCard = ({ experience, index, isVisible }) => {
-  const isAbove = index % 2 === 0; // alternate above/below
-  const verticalOffset = 160;      // distance in px from the road (tweak as needed)
+    const isAbove = index % 2 === 0; // alternate above/below
+    const verticalOffset = 160;      // distance in px from the road (tweak as needed)
 
-  return (
-    <div
-      data-experience-id={experience.id}
-      className={`absolute flex flex-col items-center shrink-0 transition-[opacity,transform] duration-700
+    return (
+      <div
+        data-experience-id={experience.id}
+        className={`absolute flex flex-col items-center shrink-0 transition-[opacity,transform] duration-700
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      style={{
-        width: CARD_SPACING,
-        top: isAbove ? `calc(-${verticalOffset}px)` : `${verticalOffset}px`, // move whole bundle up/down
-        position: "relative"
-      }}
-    >
-      {/* Card above */}
-      {isAbove && <CardContent experience={experience} />}
+        style={{
+          width: CARD_SPACING,
+          top: isAbove ? `calc(-${verticalOffset}px)` : `${verticalOffset}px`, // move whole bundle up/down
+          position: "relative"
+        }}
+      >
+        {/* Card above */}
+        {isAbove && <CardContent experience={experience} />}
 
-      {/* Dot always in middle of the bundle */}
-      <div className={`w-6 h-6 rounded-full ${typeColors[experience.type]} border-4 
+        {/* Dot always in middle of the bundle */}
+        <div className={`w-6 h-6 rounded-full ${typeColors[experience.type]} border-4 
                        border-[#0b1220] dark:border-gray-100 shadow z-10 my-4`} />
 
-      {/* Card below */}
-      {!isAbove && <CardContent experience={experience} />}
-    </div>
-  );
-};
+        {/* Card below */}
+        {!isAbove && <CardContent experience={experience} />}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen w-full bg-background-light dark:bg-background-dark pb-14">
@@ -186,8 +186,8 @@ const roadWidth = ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_E
       </nav>
 
       {/* HEADER */}
-      <div className="relative pt-20 pb-8">
-        <p className="text-center text-2xl sm:text-3xl font-bold text-foreground dark:text-white font-mono">
+      <div className="relative pt-20 pb-8 px-4 sm:px-8">
+        <p className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-foreground dark:text-white font-mono leading-snug">
           Follow the road through my experiences
         </p>
       </div>
@@ -254,25 +254,24 @@ const roadWidth = ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_E
                   />
                 </div>
               ))}
-{/* END CHIP at right-most end */}
-<div
-  className="absolute"
-  style={{
-    left: ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_EXTRA_END - 100,
-    top: '60%', // Same as the road
-    transform: 'translateY(-50%)', // Same centering transform as the road
-  }}
->
-  <div
-    className={`inline-flex items-center gap-3 px-10 py-4 rounded-full ${
-      isDarkMode
-        ? 'bg-gray-800 text-white border-gray-700'
-        : 'bg-white text-gray-900 border-gray-200'
-    } border shadow-lg`}
-  >
-    <span className="font-mono font-medium whitespace-nowrap">My journey continues...</span>
-  </div>
-</div>
+              {/* END CHIP at right-most end */}
+              <div
+                className="absolute"
+                style={{
+                  left: ROAD_START_OFFSET + experiences.length * CARD_SPACING + ROAD_EXTRA_END - 100,
+                  top: '60%', // Same as the road
+                  transform: 'translateY(-50%)', // Same centering transform as the road
+                }}
+              >
+                <div
+                  className={`inline-flex items-center gap-3 px-10 py-4 rounded-full ${isDarkMode
+                      ? 'bg-gray-800 text-white border-gray-700'
+                      : 'bg-white text-gray-900 border-gray-200'
+                    } border shadow-lg`}
+                >
+                  <span className="font-mono font-medium whitespace-nowrap">My journey continues...</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

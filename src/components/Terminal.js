@@ -21,7 +21,7 @@ function Terminal() {
     if (!showCommands) {
       timerRef.current = setTimeout(() => {
         setShowCommands(true);
-      }, 10000); // 10 seconds delay
+      }, 20000); // 20 seconds delay
     }
     // Cleanup function clears timeout if component unmounts or showCommands changes
     return () => clearTimeout(timerRef.current);
@@ -127,15 +127,15 @@ function Terminal() {
                 Email
               </a>
               ,{" "}
-              <a href="https://drive.google.com/file/d/1Wx4nDeI0qDC4RiV5qTa80Zk878JL_LlK/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-300 dark:text-[#0051A8] hover:underline">
+              <a href="https://drive.google.com/file/d/1SiuIrTdgwhxA06qCnJUd2WhSJnffn-bz/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-300 dark:text-[#0051A8] hover:underline">
                 Download Resume
               </a>
             </p>
             <br />
             <p className="text-gray-400 dark:text-gray-500">
-              # Tip: Type "learn more" to see all available commands,  
+              # Tip: Type "learn more" to see all available commands,
               <br />
-              or wait 10 seconds for them to appear automatically.
+              or wait 20 seconds for them to appear automatically.
             </p>
             <br />
 

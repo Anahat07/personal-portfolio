@@ -20,13 +20,13 @@ export const schoolProjects = [
   },
   {
     title: "PacMan Recreated",
-    features: ["My PacMan was developed using Java, enhancing the classic Pac-Man game with additional features and power-ups.", 
-              "Java's Swing and JavaFX libraries were utilized to create the game's graphical interface and handle user interactions.", 
-              "The game includes custom implementations for new power-ups and gameplay mechanics, extending the original game's functionality."],
+    features: ["My PacMan was developed using Java, enhancing the classic Pac-Man game with additional features and power-ups.",
+      "Java's Swing and JavaFX libraries were utilized to create the game's graphical interface and handle user interactions.",
+      "The game includes custom implementations for new power-ups and gameplay mechanics, extending the original game's functionality."],
     techStack: ["Java", "Java Swing", "JavaFX, OOP"],
     images: ["/school_project_images/pacman-1.png",
-             "/school_project_images/pacman-2.png",
-             "/school_project_images/pacman-3.png",
+      "/school_project_images/pacman-2.png",
+      "/school_project_images/pacman-3.png",
     ],
     links: {
       github: "https://github.com/Anahat07/PacMan"
@@ -45,11 +45,11 @@ export const schoolProjects = [
     ],
     techStack: ["Java", "Java Swing", "OOP"],
     images: ["/school_project_images/pitchPerfect1.png",
-            "/school_project_images/pitchPerfect2.png",
-            "/school_project_images/pitchPerfect3.png",
-            "/school_project_images/pitchPerfect4.png",
-            "/school_project_images/pitchPerfect5.png",
-            "/school_project_images/pitchPerfect6.png"
+      "/school_project_images/pitchPerfect2.png",
+      "/school_project_images/pitchPerfect3.png",
+      "/school_project_images/pitchPerfect4.png",
+      "/school_project_images/pitchPerfect5.png",
+      "/school_project_images/pitchPerfect6.png"
     ],
     links: {
       github: "https://github.com/Anahat07/PitchPerfect"
@@ -57,14 +57,14 @@ export const schoolProjects = [
   },
   {
     title: "ArrayAid",
-    features: ["ArrayMaster CAI was developed using Java to create an interactive computer-assisted instruction tool focused on teaching arrays.", 
-              "The project integrates various Java libraries and frameworks to deliver interactive lessons, dynamic games, and quizzes.",
-              "Java's Object-Oriented Programming principles were used to design a modular and scalable application, while Swing or JavaFX provided the graphical user interface for engaging interactions."],
+    features: ["ArrayMaster CAI was developed using Java to create an interactive computer-assisted instruction tool focused on teaching arrays.",
+      "The project integrates various Java libraries and frameworks to deliver interactive lessons, dynamic games, and quizzes.",
+      "Java's Object-Oriented Programming principles were used to design a modular and scalable application, while Swing or JavaFX provided the graphical user interface for engaging interactions."],
     techStack: ["Java", "Java Swing", "JavaFX", "OOP"],
     images: ["/school_project_images/arrayaid-1.png",
-            "/school_project_images/arrayaid-2.png",
-            "/school_project_images/arrayaid-3.png",
-            "/school_project_images/arrayaid-4.png",
+      "/school_project_images/arrayaid-2.png",
+      "/school_project_images/arrayaid-3.png",
+      "/school_project_images/arrayaid-4.png",
     ],
     links: {
       github: "https://github.com/Anahat07/ArrayAid"
@@ -72,13 +72,13 @@ export const schoolProjects = [
   },
   {
     title: "Combat Hate Crimes Canada",
-    features: ["Educational Resources: Provides detailed articles and guides on hate crimes, legal definitions, and reporting procedures.", 
-              "Legal Support Section: Outlines relevant Canadian laws and offers links to official resources for reporting hate crimes and seeking legal assistance.",
-              "Contact Us: Provides a form or email address for users to get in touch with the website administrators for questions or support."],
+    features: ["Educational Resources: Provides detailed articles and guides on hate crimes, legal definitions, and reporting procedures.",
+      "Legal Support Section: Outlines relevant Canadian laws and offers links to official resources for reporting hate crimes and seeking legal assistance.",
+      "Contact Us: Provides a form or email address for users to get in touch with the website administrators for questions or support."],
     techStack: ["HTML", "CSS", "JavaScript"],
     images: ["/school_project_images/hate-crimes-1.png",
-            "/school_project_images/hate-crimes-2.png",
-            "/school_project_images/hate-crimes-3.png",
+      "/school_project_images/hate-crimes-2.png",
+      "/school_project_images/hate-crimes-3.png",
     ],
     links: {
       github: "https://github.com/Anahat07/CombatHateCrimesCanada.github.io",
