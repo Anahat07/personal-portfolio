@@ -14,25 +14,47 @@ const ContactPage = () => {
   const [playerName, setPlayerName] = useState('');
   const [netSwaying, setNetSwaying] = useState(0);
   const [playerMessage, setPlayerMessage] = useState('');
+  const [leaderboard, setLeaderboard] = useState([]);
 
   //   const deleteEntry = (index) => {
   //   setLeaderboard(prev => prev.filter((_, i) => i !== index));
   // };
 
-  // Load leaderboard from localStorage or use default
-  const [leaderboard, setLeaderboard] = useState(() => {
-    const saved = localStorage.getItem('leaderboard');
-    return saved
-      ? JSON.parse(saved) : [];
-  });
-
   const gameRef = useRef(null);
   const animationRef = useRef(null);
 
   // Persist leaderboard on change
-  useEffect(() => {
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
-  }, [leaderboard]);
+useEffect(() => {
+  fetch("http://localhost:4000/api/leaderboard")
+    .then(res => res.json())
+    .then(data => setLeaderboard(data));
+}, []);
+
+const submitScore = async () => {
+  if (!playerName.trim()) return;
+
+  const message = playerMessage.trim() || "> echo 'No message entered.'";
+  const newEntry = { name: playerName, score, message };
+
+  try {
+    const res = await fetch("http://localhost:4000/api/submitScore", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newEntry)
+    });
+
+    const data = await res.json();
+    if (data.leaderboard) setLeaderboard(data.leaderboard);
+  } catch (err) {
+    console.error("Error submitting score:", err);
+  }
+
+  setShowScore(false);
+  setPlayerName('');
+  setPlayerMessage('');
+  setScore(0);
+  setAttempts(0);
+};
 
   const resetBall = useCallback(() => {
     setBallPosition({ x: 20, y: 85 });
@@ -103,23 +125,6 @@ const ContactPage = () => {
     setBallVelocity({ x: velocityX, y: velocityY });
     setIsShootingAnimating(true);
     setAttempts(prev => prev + 1);
-  };
-
-  const submitScore = () => {
-    if (!playerName.trim()) return;
-
-    const message = playerMessage.trim() || "> echo 'No message entered.'";
-    const newEntry = { name: playerName, score: score, message };
-
-    setLeaderboard(prev =>
-      [...prev, newEntry].sort((a, b) => b.score - a.score)
-    );
-
-    setShowScore(false);
-    setPlayerName('');
-    setPlayerMessage('');
-    setScore(0);
-    setAttempts(0);
   };
 
   const resetGame = () => {
