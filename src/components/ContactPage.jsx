@@ -353,6 +353,11 @@ const ContactPage = () => {
           </div>
         </div>
 
+        {/* Footer */}
+        <footer className="w-full py-4 text-center text-sm text-white dark:text-black mt-8">
+          © 2025 - made with <span className="text-[#8F9A81]">❤️</span> by Anahat
+        </footer>
+
         {/* Leaderboard
         <div className="mt-8 p-6 rounded-lg bg-[#383E30] dark:bg-background-light font-mono">
           <h3 className="text-green-400 dark:text-green-400 font-bold mb-4 flex items-center">
@@ -424,12 +429,6 @@ const ContactPage = () => {
     </div>
 
   );
-
-  {/* Footer */ }
-  <footer className="w-full py-4 text-center text-sm text-white dark:text-black mt-8">
-    © 2025 - made with <span className="text-[#8F9A81]">❤️</span> by Anahat
-  </footer>
-
 };
 
 export default ContactPage;
