@@ -92,7 +92,7 @@ export const experiences = [
   },
   {
     id: 7,
-    title: "Co-Founder & Chair",
+    title: "Founder & Senior Advisor",
     company: "EmpowerED",
     location: "Markham, ON",
     date: "Jan 2024 - Present",
