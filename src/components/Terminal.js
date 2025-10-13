@@ -127,7 +127,7 @@ function Terminal() {
                 Email
               </a>
               ,{" "}
-              <a href="https://drive.google.com/file/d/1SiuIrTdgwhxA06qCnJUd2WhSJnffn-bz/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-300 dark:text-[#0051A8] hover:underline">
+              <a href="https://drive.google.com/file/d/1Aen7bmxN66EUNmmL-9ETTXZfbU5giEa1/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-300 dark:text-[#0051A8] hover:underline">
                 Download Resume
               </a>
             </p>

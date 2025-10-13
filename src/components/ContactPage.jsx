@@ -163,7 +163,7 @@ const ContactPage = () => {
     { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', url: 'https://www.linkedin.com/in/anahat-kc/', command: 'open -a "LinkedIn"' },
     { icon: <Github className="w-5 h-5" />, label: 'GitHub', url: 'https://github.com/Anahat07', command: 'git clone github.com/yourprofile' },
     { icon: <Mail className="w-5 h-5" />, label: 'Email', url: 'mailto:anahat.chhatwal@uwaterloo.ca', command: 'mail -s "Hello" anahat.chhatwal@uwaterloo.ca' },
-    { icon: <Download className="w-5 h-5" />, label: 'Resume', url: 'https://drive.google.com/file/d/1SiuIrTdgwhxA06qCnJUd2WhSJnffn-bz/view?usp=sharing', command: 'curl -O /path/to/resume.pdf' }
+    { icon: <Download className="w-5 h-5" />, label: 'Resume', url: 'https://drive.google.com/file/d/1Aen7bmxN66EUNmmL-9ETTXZfbU5giEa1/view?usp=sharing', command: 'curl -O /path/to/resume.pdf' }
   ];
 
   return (
