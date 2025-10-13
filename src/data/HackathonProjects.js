@@ -106,7 +106,7 @@ export const hackathonProjects = [
     }
   },
   {
-  title: "Puck Yeah! - PWHL Fantasy League",
+  title: "Puck Yeah! - Technova",
   features: [
     "Full-Stack Web App: Provides fans of the PWHL with a fantasy league experience, spotlighting women’s hockey.",
     "User Authentication & League Management: Includes dashboards, team views, and a player draft engine.",
