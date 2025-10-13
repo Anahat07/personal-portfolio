@@ -104,5 +104,30 @@ export const hackathonProjects = [
     links: {
       demo: "https://www.linkedin.com/posts/activity-7242155502434971648-UNR5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3YDd0B-QeS1JqgsgeHV5FzjoDrw2-ZbaY"
     }
+  },
+  {
+  title: "Puck Yeah! - PWHL Fantasy League",
+  features: [
+    "Full-Stack Web App: Provides fans of the PWHL with a fantasy league experience, spotlighting women’s hockey.",
+    "User Authentication & League Management: Includes dashboards, team views, and a player draft engine.",
+    "Real-Time Stats & AI Commentary: Pulls PWHL statistics via REST APIs with Axios and integrates an AI commentator using Google Gemini API.",
+    "Front-End Routing & UI Enhancements: Managed with React Router and enhanced with Lucide Icons.",
+    "Database & Authentication: Structured using MongoDB with Mongoose, implemented JWT-based authentication, and deployed via Render.",
+    "Hackathon Experience: First full-stack project for the team, gained hands-on experience connecting front and back end, debugging APIs, and structuring scalable databases under hackathon time constraints."
+  ],
+  techStack: ["React", "Express.js", "MongoDB", "Mongoose", "JWT Authentication", "Axios", "Lucide Icons", "Render", "Google Gemini API"],
+  images: [
+    "/hackathon_project_images/puckyeah1.png",
+    "/hackathon_project_images/puckyeah2.png",
+    "/hackathon_project_images/puckyeah3.png",
+    "/hackathon_project_images/puckyeah4.png",
+    "/hackathon_project_images/puckyeah5.png",
+    "/hackathon_project_images/puckyeah6.png"
+  ],
+  links: {
+    devpost: "https://devpost.com/software/puck-yeah",
+    demo: "https://youtu.be/-hbunjvI9Vs?si=lRnu-EUATWWpa5Hn", 
+    website: "https://puckyeah.tech/" 
   }
+}
 ];
