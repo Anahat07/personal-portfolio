@@ -375,7 +375,7 @@
     alt="CS Webring"
     className="
       w-5 opacity-80 hover:opacity-100 transition
-      filter brightness-75 saturate-150 hue-rotate-[85deg]
+      filter brightness-50 saturate-150 hue-rotate-[85deg]
       dark:filter-none
     "
   />
