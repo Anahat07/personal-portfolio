@@ -357,7 +357,7 @@
     <footer className="w-full py-4 text-center text-sm text-[#383E30] dark:text-[#EEE2DC] mt-8">
       <div className="flex items-center justify-center gap-3 mb-3 font-mono text-sm">
         <a
-          href="https://cs.uwatering.com/https://anahat-chhatwal.vercel.app/?nav=prev"
+          href="https://cs.uwatering.com/#https://anahat-chhatwal.vercel.app/?nav=prev"
           className="hover:opacity-70 transition"
           aria-label="Previous site"
         >
@@ -365,7 +365,7 @@
         </a>
 
         <a
-          href="https://cs.uwatering.com/https://anahat-chhatwal.vercel.app/"
+          href="https://cs.uwatering.com/#https://anahat-chhatwal.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="CS Webring"
@@ -375,14 +375,14 @@
     alt="CS Webring"
     className="
       w-5 opacity-80 hover:opacity-100 transition
-      filter brightness-50 saturate-150 hue-rotate-[85deg]
+      filter brightness-25 saturate-150 hue-rotate-[85deg]
       dark:filter-none
     "
   />
         </a>
 
         <a
-          href="https://cs.uwatering.com/https://anahat-chhatwal.vercel.app/?nav=next"
+          href="https://cs.uwatering.com/#https://anahat-chhatwal.vercel.app/?nav=next"
           className="hover:opacity-70 transition"
           aria-label="Next site"
         >
