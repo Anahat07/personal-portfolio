@@ -104,10 +104,14 @@ const ExperiencesPage = ({ isDarkMode }) => {
         {experience.location}
       </p>
       <p className="text-xs text-white dark:text-gray-700 mb-3">{experience.description}</p>
+      {experience.achievement && (
       <div className="p-1 rounded-md bg-[#566246] dark:bg-green-100 mb-2 flex items-center gap-2">
-        <Star className="w-4 h-4 text-gray-300 dark:text-green-600" />
-        <span className="text-xs text-gray-300 dark:text-green-700">{experience.achievement}</span>
+          <Star className="w-4 h-4 text-gray-300 dark:text-green-600" />
+          <span className="text-xs text-gray-300 dark:text-green-700">
+            {experience.achievement}
+          </span>
       </div>
+      )}
       <div className="flex flex-wrap gap-1">
         {experience.skills.map((skill, i) => (
           <span key={i} className="px-2 py-0.5 text-[11px] rounded-full bg-[#566246] dark:bg-gray-100 text-gray-300 dark:text-gray-700">

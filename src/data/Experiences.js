@@ -219,15 +219,15 @@ export const experiences = [
   },
   {
   id: 16,
-  title: "CAN-CWIC Conference Attendee",
-  company: "Canadian Celebration of Women in Computing",
+  title: "CAN-CWIC '25 Attendee",
+  company: "Canadian Celebration of Women in Computing Conference",
   location: "Toronto, ON",
   date: "November 2025",
   type: "leadership",
   icon: <Users className="w-5 h-5" />,
-  description: "Attended national conference celebrating women in computing; engaged with industry leaders and researchers on growth, leadership, and belonging in tech",
+  description: "Engaged with industry leaders & researchers on growth, leadership, and belonging in tech",
   skills: ["Professional Development", "Leadership", "Networking", "Women in Tech"],
-  achievement: "Selected as 1 of 40 NCWIT Aspirations in Computing National Award Winners",
+  achievement: null,
 },
 {
   id: 17,
@@ -237,7 +237,8 @@ export const experiences = [
   date: "Sep 2025 - Present",
   type: "leadership",
   icon: <Users className="w-5 h-5" />,
-  description: "Active member of Women in Computer Science (WiCS) and the Waterloo Aerial Robotics Group (WARG), engaging in tech advocacy, mentorship, and hands-on robotics development",
+  description: "Executive in Women in Computer Science (WiCS) and active member of Waterloo Aerial Robotics Group (WARG)",
   skills: ["STEM Advocacy", "Community Building", "Robotics", "Technical Design", "Team Collaboration"],
+  achievement: null,
 }
 ];
