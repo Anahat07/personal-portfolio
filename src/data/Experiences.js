@@ -216,5 +216,28 @@ export const experiences = [
     description: "Computer Science and Business Administration Double Degree",
     skills: [],
     achievement: "President's Scholarship of Distinction ($2000), Ted Rogers Future Leader Scholarship ($26,800)"
-  }
+  },
+  {
+  id: 16,
+  title: "CAN-CWIC Conference Attendee",
+  company: "Canadian Celebration of Women in Computing",
+  location: "Toronto, ON",
+  date: "November 2025",
+  type: "leadership",
+  icon: <Users className="w-5 h-5" />,
+  description: "Attended national conference celebrating women in computing; engaged with industry leaders and researchers on growth, leadership, and belonging in tech",
+  skills: ["Professional Development", "Leadership", "Networking", "Women in Tech"],
+  achievement: "Selected as 1 of 40 NCWIT Aspirations in Computing National Award Winners",
+},
+{
+  id: 17,
+  title: "Clubs & Design Teams",
+  company: "University of Waterloo",
+  location: "Waterloo, ON",
+  date: "Sep 2025 - Present",
+  type: "leadership",
+  icon: <Users className="w-5 h-5" />,
+  description: "Active member of Women in Computer Science (WiCS) and the Waterloo Aerial Robotics Group (WARG), engaging in tech advocacy, mentorship, and hands-on robotics development",
+  skills: ["STEM Advocacy", "Community Building", "Robotics", "Technical Design", "Team Collaboration"],
+}
 ];
