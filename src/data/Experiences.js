@@ -234,7 +234,7 @@ export const experiences = [
   title: "Clubs & Design Teams",
   company: "University of Waterloo",
   location: "Waterloo, ON",
-  date: "Sep 2025 - Present",
+  date: "Dec 2025 - Present",
   type: "leadership",
   icon: <Users className="w-5 h-5" />,
   description: "Executive in Women in Computer Science (WiCS) and active member of Waterloo Aerial Robotics Group (WARG)",
