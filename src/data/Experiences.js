@@ -238,7 +238,7 @@ export const experiences = [
   type: "leadership",
   icon: <Users className="w-5 h-5" />,
   description: "Executive in Women in Computer Science (WiCS) and active member of Waterloo Aerial Robotics Group (WARG)",
-  skills: ["STEM Advocacy", "Community Building", "Robotics", "Technical Design", "Team Collaboration"],
+  skills: ["STEM Advocacy", "Community Building", "Robotics", "Technical Design", "Collaboration"],
   achievement: null,
 }
 ];
