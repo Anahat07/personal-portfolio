@@ -238,7 +238,7 @@
                             </h2>
 
                             <p className="mb-6 text-sm text-green-400 dark:text-black">
-                              I love basketball, so I couldn’t resist adding this mini-game 🏀. Launch the ball, make every shot count, and see if you can climb the leaderboard higher than me!
+                              I love basketball, so I couldn’t resist adding this mini-game 🏀. Launch the ball and try to make every shot count!
                             </p>
 
                             {!gameActive ? (
