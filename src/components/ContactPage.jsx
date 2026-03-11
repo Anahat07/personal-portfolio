@@ -1,5 +1,5 @@
                 import React, { useState, useEffect, useRef, useCallback } from 'react';
-                import { Github, Linkedin, Mail, Download, Terminal, Trophy, Target, Zap } from 'lucide-react';
+                import { Github, Linkedin, Mail, Download, Terminal, Target, Zap } from 'lucide-react';
                 import { Link } from "react-router-dom";
 
                 const ContactPage = () => {
@@ -10,10 +10,10 @@
                   const [ballVelocity, setBallVelocity] = useState({ x: 0, y: 0 });
                   const [ballRotation, setBallRotation] = useState(0);
                   const [isShootingAnimating, setIsShootingAnimating] = useState(false);
-                  const [showScore, setShowScore] = useState(false);
-                  const [playerName, setPlayerName] = useState('');
+                  //const [showScore, setShowScore] = useState(false);
+                  //const [playerName, setPlayerName] = useState('');
                   const [netSwaying, setNetSwaying] = useState(0);
-                  const [playerMessage, setPlayerMessage] = useState('');
+                  //const [playerMessage, setPlayerMessage] = useState('');
                   // const [leaderboard, setLeaderboard] = useState([]);
                   // const API_URL = process.env.REACT_APP_API_URL || "";
 
@@ -156,7 +156,7 @@
                     setAttempts(0);
                     resetBall();
                     setGameActive(false);
-                    setShowScore(false);
+                    //setShowScore(false);
                   };
 
                   const contactLinks = [
