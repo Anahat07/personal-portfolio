@@ -84,5 +84,30 @@ export const schoolProjects = [
       github: "https://github.com/Anahat07/CombatHateCrimesCanada.github.io",
       website: "https://anahat07.github.io/CombatHateCrimesCanada.github.io/"
     }
+  },
+  {
+  title: "Hack the North Frontend Challenge",
+  features: [
+    "Developed an interactive event portal featuring an animated 3D chest landing scene that transitions into a responsive dashboard displaying Hack the North events.",
+    "Structured the application using modular React components to separate the landing experience, dashboard, and authentication flow for better maintainability.",
+    "Designed a polished and responsive UI using Tailwind CSS, including hover effects, subtle animations, and responsive layouts for different screen sizes.",
+    "Implemented asynchronous event data fetching using Axios, with loading states to ensure a smooth and reliable user experience while data loads.",
+    "Integrated Three.js and React Three Fiber to experiment with 3D elements in React, creating a floating diamond and animated visual effects to enhance the user interface.",
+    "Added a demo login modal to simulate restricted content and demonstrate how authentication could be incorporated into a real production system."
+  ],
+  techStack: ["React", "Tailwind CSS", "Axios", "Three.js", "React Three Fiber", "Framer Motion"],
+  images: [
+    "/school_project_images/htnchallenge1.png",
+    "/school_project_images/htnchallenge2.png",
+    "/school_project_images/htnchallenge3.png",
+    "/school_project_images/htnchallenge4.png",
+    "/school_project_images/htnchallenge5.png",
+    "/school_project_images/htnchallenge6.png",
+    "/school_project_images/htnchallenge7.png"
+  ],
+  links: {
+    github: "https://github.com/Anahat07/htn-frontend-challenge",
+    demo: "https://htnchallenge-anahat.netlify.app/"
   }
+}
 ];
